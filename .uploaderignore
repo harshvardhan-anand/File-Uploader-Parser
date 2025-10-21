@@ -1,0 +1,85 @@
+# Example comprehensive uploader rules file
+# Demonstrates all supported rule sections and pattern types
+# Lines starting with '#' are comments; blank lines are ignored.
+
+# ------------------------------------------------------------
+# Exclude folders — can be folder names, path globs, or patterns
+[exclude_folder]
+
+build
+dist
+__pycache__
+**/cache
+temp/*
+data/private
+# Exclude any folder named 'backup' at any level
+**/backup
+
+# ------------------------------------------------------------
+# Exclude files — can be file names or relative path globs
+[exclude_file]
+
+Thumbs.db
+.DS_Store
+*.tmp
+*.bak
+*.old
+secret_*.txt
+logs/**/*.log
+data/secret.csv
+# Exclude any Python bytecode
+*.pyc
+
+# ------------------------------------------------------------
+# Exclude extensions — list without the dot
+[exclude_extension]
+
+log
+tmp
+bak
+old
+swp
+
+# ------------------------------------------------------------
+# Include folders — force-include specific folders (override excludes)
+[include_folder]
+
+docs
+examples
+important_data
+# Include a nested folder path pattern
+reports/monthly
+
+# ------------------------------------------------------------
+# Include files — force-include specific filenames or globs
+[include_file]
+
+README.md
+LICENSE
+Makefile
+*.important.txt
+config*.json
+# Include path-glob for nested config files
+config/**/app.cfg
+
+# ------------------------------------------------------------
+# Include extensions — force-include certain file types
+[include_extension]
+
+md
+csv
+json
+yml
+sh
+
+# ------------------------------------------------------------
+# Include path by exact relative file path (from project root)
+[include_path_by_file]
+
+config/prod.env
+scripts/deploy.sh
+data/private/keep_this.txt
+docs/tutorials/intro.md
+src/critical_module.py
+
+# End of rules file

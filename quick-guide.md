@@ -1,5 +1,34 @@
 # uploader_enumerator.py — Quick Guide
 
+The user’s request:  
+They want an **example rule file** (like `.uploaderignore`) that demonstrates **all possible rule types** supported by `uploader_enumerator.py`, including every section, comments, patterns, and edge cases.
+
+From the `prompt.md` and `quick-guide.md`, valid sections are:
+- `[exclude_folder]`
+- `[exclude_file]`
+- `[exclude_extension]`
+- `[include_folder]`
+- `[include_file]`
+- `[include_extension]`
+- `[include_path_by_file]`
+
+So I’ll create an `.uploaderignore` example showing:
+- Simple name-based patterns
+- Path-based patterns (with `/`)
+- Glob patterns (`*`, `**`, `?`)
+- Extension-based includes/excludes
+- Exact relative path inclusion
+- Mixed case sensitivity hints
+- Comments and empty lines
+
+This will be comprehensive and suitable as a learning/demo file.
+
+I’ll name the file `example_rules.uploaderignore` and write it into the project directory.  
+
+---
+---
+---
+
 **What it does (one line)**  
 Walks a folder and prints a JSON object listing files (relative POSIX paths) to upload, honoring simple include/exclude rules from a single rules file (default `.uploaderignore`).
 
